@@ -1,16 +1,10 @@
-from flask import Flask, render_template, request, jsonify, send_file
-import subprocess
+from flask import Flask
 import re
 import os
 
 app = Flask(__name__)
 
-DOWNLOAD_DIR = "/storage/emulated/0/Download"
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
+DOWNLOAD_DIR = "/storage/emulated/0/Download" 
 @app.route("/get-formats")
 def get_formats():
     url = request.args.get("url")
